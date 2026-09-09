@@ -1,3 +1,22 @@
+//===========================================
+//REGISTRO DO SERVICE WORKER
+//===========================================
+if ("serviceWorker" in navigador) {
+  window.addEventeeListener("load", () => {
+    navigador.serviceWorker
+    .register("sw.js")
+    .then(() =>{
+      console.log("service Worker registrado com sucesso.");
+    })
+    .catch((erro) => {
+      console.error("Erro ao registrar o Service Worker:", erro);
+    });
+  });
+
+}
+
+
+
 // 1) Encontra o botão que possui id="buscar"
 const botaoBuscar = document.getElementById("buscar");
 

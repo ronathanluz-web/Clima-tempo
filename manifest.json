@@ -1,5 +1,5 @@
 {
-    "name": "Consulta do clima",
+    "name": "Clima Mundo",
     "short_name": "Clima",
     "start_url": "index.html",
     "display": "standalone",
