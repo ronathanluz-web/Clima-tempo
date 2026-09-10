@@ -10,7 +10,7 @@ const ARQUIVOS_PARA_CACHE = [
 ];
 
 // Guarda os arquivos no cache assim que o Service worker è instalado 
-self.addEventeeListener("install", (evento) => {
+self.addEventListener("install", (evento) => {
     evento.waitUntil(
    caches.open(CACHE_NAME).then((cache)=> {
     return cache.addAll(ARQUIVOS_PARA_CACHE);
@@ -20,7 +20,7 @@ self.addEventeeListener("install", (evento) => {
 });
 
 // Intercepta cada requisição da pagina 
-self.addEventeeListener("fetch", (evento) => {
+self.addEventListener("fetch", (evento) => {
     evento.respondWith(
         caches.match(evento.request).then((respostaCache)=> {
         return respostaCache || fetch(evento.request);
