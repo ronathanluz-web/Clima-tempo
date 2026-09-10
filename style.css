@@ -1,18 +1,155 @@
 * {
-  margin: 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #0f4c81,
+        #1976d2,
+        #64b5f6
+    );
+
+    color: white;
 }
 
+
+.container {
+    width: 90%;
+    max-width: 420px;
+    padding: 30px 25px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+}
+
+/* Nome do app */
+h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Área de pesquisa */
+.busca {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.busca input {
+    flex: 1;
+    padding: 14px 16px;
+
+    border: none;
+    outline: none;
+    border-radius: 15px;
+
+    font-size: 16px;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #222;
+}
+
+.busca input::placeholder {
+    color: #777;
+}
+
+.busca button {
+    width: 50px;
+    border: none;
+    border-radius: 15px;
+
+    background: white;
+    color: #1976d2;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.busca button:hover {
+    transform: scale(1.08);
+    background: #e3f2fd;
+}
+
+/* Informações do clima */
+.clima {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clima img {
+    width: 120px;
+    margin-bottom: 5px;
+}
+
+.temperatura {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.descricao {
+    font-size: 22px;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.cidade {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .container {
+        width: 92%;
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .temperatura {
+        font-size: 60px;
+    }
+
+    .cidade {
+        font-size: 23px;
+    }
+
+    .detalhes {
+        flex-direction: column;
+    }
+}
 /* Estilo base: pensando para telas pequenas */
 .container {
   width: 100%;
@@ -50,5 +187,3 @@ input,button {
  button {
   margin-top: 8px;
  }
-
- 
