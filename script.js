@@ -1,9 +1,9 @@
 //===========================================
 //REGISTRO DO SERVICE WORKER
 //===========================================
-if ("serviceWorker" in navigador) {
+if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigador.serviceWorker
+    navigator.serviceWorker
     .register("sw.js")
     .then(() =>{
       console.log("service Worker registrado com sucesso.");
@@ -57,8 +57,7 @@ function buscarClima(event) {
 
   // 1) Descobre latitude e longitude da cidade
   const urlBusca =
-    `${GEO_URL}?name=${encodeURIComponent(cidade)}` +
-    `&count=1&language=pt&format=json`;
+    `${GEO_URL}?name=${encodeURIComponent(cidade)}&count=1&language=pt&format=json`;
 
   fetch(urlBusca)
 
@@ -85,9 +84,7 @@ function buscarClima(event) {
 
       // 2) Usa latitude e longitude para consultar o clima
       const urlClima =
-        `${CLIMA_URL}?latitude=${latitude}` +
-        `&longitude=${longitude}` +
-        `&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code`;
+        `${CLIMA_URL}?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code`;
 
       return fetch(urlClima);
     })
