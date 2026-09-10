@@ -2,7 +2,7 @@
 //REGISTRO DO SERVICE WORKER
 //===========================================
 if ("serviceWorker" in navigador) {
-  window.addEventeeListener("load", () => {
+  window.addEventListener("load", () => {
     navigador.serviceWorker
     .register("sw.js")
     .then(() =>{
